@@ -56,6 +56,9 @@ xhttp.onreadystatechange = function() {
         console.log(`Script message: Brute force search of ${wordlist.length} passwords completed with no password found. Do you need to use a different wordlist?`)
     }
   } 
+  else if (this.readyState == 4 && this.status == 0) {
+    console.log(atob("U2NyaXB0IGVycm9yOiBVUkwgTk9UIEZPVU5ELiBVUkwgdXNlZCBtYXkgYmUgaW5jb3JyZWN0LiBXaGF0IGlzIHRoZSBjb3JyZWN0IFVSTCB5b3UgbmVlZCB0byB1c2U/"))
+  }
   else if (this.readyState == 4 && this.status == 404) {
     console.log(atob("U2NyaXB0IGVycm9yOiBVUkwgTk9UIEZPVU5ELiBVUkwgdXNlZCBtYXkgYmUgaW5jb3JyZWN0LiBXaGF0IGlzIHRoZSBjb3JyZWN0IFVSTCB5b3UgbmVlZCB0byB1c2U/"))
   }
